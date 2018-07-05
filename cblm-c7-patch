@@ -1,0 +1,25 @@
+diff -Nru cblm-2.9.4-orig/src/data.h cblm-2.9.4/src/data.h
+--- cblm-2.9.4-orig/src/data.h  2006-06-10 07:50:01.000000000 +0200
++++ cblm-2.9.4/src/data.h       2018-07-03 15:10:48.327982222 +0200
+@@ -49,6 +49,9 @@
+
+ #include <assert.h>
+
++#include <limits.h>
++#include <sys/resource.h>
++
+ #define SUMMARY_INTERVAL (60 * 15) // Every 15 min check to see if a summary if needed.
+
+ /* Storage intervals (in sec) */
+diff -Nru cblm-2.9.4-orig/src/prefs.h cblm-2.9.4/src/prefs.h
+--- cblm-2.9.4-orig/src/prefs.h 2006-05-17 06:41:31.000000000 +0200
++++ cblm-2.9.4/src/prefs.h      2018-07-03 15:10:33.047981411 +0200
+@@ -26,6 +26,8 @@
+ #include <pthread.h>
+ #include <mysql/mysql.h>
+
++#include <sys/resource.h>
++
+ #define DEF_NICENESS 5
+ #define DEF_PORT 7447
+ #define DEF_RATE 120
