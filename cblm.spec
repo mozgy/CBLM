@@ -44,8 +44,9 @@ install -m 755 -p %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/init.d/cblmd
 
 mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/rsyslog.d
 cat > $RPM_BUILD_ROOT%{_sysconfdir}/rsyslog.d/cblmd.conf << EOF_SYSLOG
-# copy for admins
+#
 :programname, isequal, "cblmd"  /var/log/cblmd.log
+& stop
 EOF_SYSLOG
 
 %post
