@@ -38,6 +38,12 @@ start() {
         echo
         return 0
     fi
+    if [ "${SOURCE}" == "" ]; then
+        echo -n $": cannot start cblmd: device is down.";
+        failure $": cannot start cblmd: device is down.";
+        echo
+        return 1;
+    fi
     if [ -f ${CBLM} ]; then
         su - ${USER} -c "${CBLM} --source=${SOURCE} --interface=${IFACE} --rate=30 --precedence=0 --precedence=1 --precedence=2 --precedence=5 --dbhost=${DBHOST} --dbname=${DBNAME} --dbuser=${DBUSER} --dbpass=${DBPASS} --stats=${STAT}"
     fi
